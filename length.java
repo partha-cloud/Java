@@ -1,6 +1,4 @@
-
 import java.util.Scanner;
-
 public class length {
 
         public static void main(String[] args) {
@@ -8,7 +6,7 @@ public class length {
 
                 //Taking input for line 1
                 System.out.print("Enter the point x1: ");
-                int x1=scan.nextInt();
+                int x1= scan.nextInt();
                 System.out.print("Enter the point y1: ");
                 int y1=scan.nextInt();
                 System.out.println("(x1,y1) points of the line 1 are: " + x1 + ", " + y1);
@@ -40,9 +38,20 @@ public class length {
                 Float length2 = (float) Math.sqrt( (Math.pow((x4 - x3),2) + Math.pow((y4 - y3),2)) );
                 System.out.println("Length of the line 2 is: " + length2);
 
-                System.out.println(length1.equals(length2));
-
+                int diff=length1.compareTo(length2);
+                switch(diff) {
+                        case -1:
+                                System.out.println("Line 2 is Longer than Line 1");
+                                break;
+                        case 0:
+                                System.out.println("Both Lines are Equal");
+                                break;
+                        case 1:
+                                System.out.println("Line 1 is Longer than Line 2");
+                                break;
+                        default:
+                                System.out.println("Some error has occured");
+                                break;
+                }
         }
-
 }
-
